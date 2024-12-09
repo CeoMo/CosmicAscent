@@ -1,135 +1,147 @@
 /* General Reset */
 body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Press Start 2P', sans-serif;
-  background-color: #222;
+  margin: 0; /* Remove default margin around the body */
+  overflow: hidden; /* Prevent scrolling on the page */
+  font-family: 'Press Start 2P', sans-serif; /* Apply retro-style font */
+  background-color: #222; /* Set a dark background color */
 }
 
+/* Game Container Styling */
 #game-container {
-  position: relative;
-  width: 900px;
-  height: 500px;
-  margin: 0 auto;
-  border: 2px solid #000;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.5s ease;
+  position: relative; /* Enable absolute positioning for child elements */
+  width: 900px; /* Set the game width */
+  height: 500px; /* Set the game height */
+  margin: 0 auto; /* Center the game container horizontally */
+  border: 2px solid #000; /* Add a black border around the game container */
+  overflow: hidden; /* Ensure content doesn't overflow the container */
+  background-size: cover; /* Scale background image to cover the container */
+  background-position: center; /* Center the background image */
+  transition: background-image 0.5s ease; /* Smooth transition for background changes */
 }
 
+/* UI Elements: Level Indicator, Score Counter, Timer */
 #level-indicator,
 #score-counter,
 #timer {
-  position: absolute;
-  top: 10px;
-  font-size: 14px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 5px 10px;
-  border-radius: 5px;
-  z-index: 1000;
+  position: absolute; /* Position elements relative to the game container */
+  top: 10px; /* Set top position */
+  font-size: 14px; /* Set font size */
+  color: #fff; /* Set text color to white */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  padding: 5px 10px; /* Add padding for better spacing */
+  border-radius: 5px; /* Round the corners */
+  z-index: 1000; /* Ensure these elements appear above others */
 }
 
 #level-indicator {
-  left: 10px;
-  border: 2px solid #ffcc00;
+  left: 10px; /* Position at the top-left of the container */
+  border: 2px solid #ffcc00; /* Add a yellow border */
 }
 
 #score-counter {
-  right: 150px;
-  border: 2px solid #00ff00;
+  right: 150px; /* Position near the top-right, leaving space for the timer */
+  border: 2px solid #00ff00; /* Add a green border */
 }
 
 #timer {
-  right: 10px;
-  border: 2px solid #ff4500;
+  right: 10px; /* Position at the top-right */
+  border: 2px solid #ff4500; /* Add an orange-red border */
 }
 
+/* Player Character Styling */
 #player {
-  position: absolute;
-  bottom: 0;
-  left: 100px;
-  width: 50px;
-  height: 50px;
-  image-rendering: pixelated;
+  position: absolute; /* Position relative to the game container */
+  bottom: 0; /* Place the player at the bottom of the game container */
+  left: 100px; /* Initial X position of the player */
+  width: 50px; /* Set width of the player character */
+  height: 50px; /* Set height of the player character */
+  image-rendering: pixelated; /* Ensure sharp edges for pixel art */
 }
 
+/* Platforms */
 .platform {
-  position: absolute;
-  height: 20px;
+  position: absolute; /* Position relative to the game container */
+  height: 20px; /* Set platform height */
   background: repeating-linear-gradient(
     45deg,
     #8b4513,
     #8b4513 10px,
     #654321 10px,
     #654321 20px
-  );
-  border: 2px solid #000;
-  border-radius: 5px;
+  ); /* Add a wood-like texture */
+  border: 2px solid #000; /* Add a black border */
+  border-radius: 5px; /* Round the platform corners */
 }
 
+/* Moving Platforms */
 .moving-platform {
-  background: repeating-linear-gradient(45deg, #4287f5, #4287f5 10px, #0047ab 10px, #0047ab 20px);
+  background: repeating-linear-gradient(45deg, #4287f5, #4287f5 10px, #0047ab 10px, #0047ab 20px); /* Add a distinct pattern for moving platforms */
 }
 
+/* Collectibles */
 .collectible {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: gold;
-  border-radius: 50%;
-  box-shadow: 0px 0px 5px 2px #ffd700;
+  position: absolute; /* Position relative to the game container */
+  width: 20px; /* Set width of the collectible */
+  height: 20px; /* Set height of the collectible */
+  background: gold; /* Set a golden color for the collectible */
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0px 0px 5px 2px #ffd700; /* Add a glowing effect */
 }
 
+/* Spikes */
 .spike {
-  position: absolute;
-  width: 50px;
-  height: 20px;
-  background: crimson;
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-  box-shadow: 0px 0px 5px 2px #ff0000;
+  position: absolute; /* Position relative to the game container */
+  width: 50px; /* Set width of the spike */
+  height: 20px; /* Set height of the spike */
+  background: crimson; /* Set spike color to crimson */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Create a triangular shape */
+  box-shadow: 0px 0px 5px 2px #ff0000; /* Add a glowing red effect */
 }
 
+/* Gravity Zones */
 .gravity-zone {
-  position: absolute;
-  background: rgba(135, 206, 250, 0.4);
-  border: 2px dashed #00f;
-  border-radius: 5px;
+  position: absolute; /* Position relative to the game container */
+  background: rgba(135, 206, 250, 0.4); /* Semi-transparent blue background */
+  border: 2px dashed #00f; /* Add a dashed blue border */
+  border-radius: 5px; /* Round the corners */
 }
 
+/* Level Selection Menu */
 #level-menu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  position: absolute; /* Position relative to the game container */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  text-align: center; /* Center-align text */
+  background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+  color: white; /* White text color */
+  padding: 20px; /* Add padding around the menu */
+  border-radius: 10px; /* Round the corners */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
 }
 
+/* Menu Heading */
 #level-menu h1 {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 20px; /* Add spacing below the heading */
+  font-size: 24px; /* Set font size for the heading */
 }
 
+/* Level Select Buttons */
 .level-select-button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-family: 'Press Start 2P', sans-serif;
-  background-color: #ffcc00;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: block; /* Make buttons block-level elements */
+  margin: 10px auto; /* Center buttons and add vertical spacing */
+  padding: 10px 20px; /* Add padding for better clickability */
+  font-size: 16px; /* Set font size for the button text */
+  font-family: 'Press Start 2P', sans-serif; /* Use retro-style font */
+  background-color: #ffcc00; /* Set the button background color */
+  color: black; /* Set button text color */
+  border: none; /* Remove the default button border */
+  border-radius: 5px; /* Round the button corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Hover Effect for Buttons */
 .level-select-button:hover {
-  background-color: #ffa500;
+  background-color: #ffa500; /* Change background color on hover */
 }

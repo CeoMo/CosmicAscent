@@ -8,44 +8,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
-    <div id="level-indicator">Level 1: The Dawn</div>
-    <div id="score-counter">Score: 0</div>
-    <div id="timer">Time: 0</div>
-    <img id="player" src="Astronaut.gif" alt="Player">
-
-    <!-- Level Menu -->
-    <div id="level-menu">
-      <h1>Select a Level</h1>
-      <button class="level-select-button" data-level="1">Level 1: The Dawn</button>
-      <button class="level-select-button" data-level="2">Level 2: Forest of Lights</button>
-      <button class="level-select-button" data-level="3">Level 3: The Ruined City</button>
+    <!-- Main Game Container -->
+    <div id="game-container">
+      <!-- UI Elements -->
+      <div id="level-indicator">Level 1: The Dawn</div> <!-- Displays the current level name -->
+      <div id="score-counter">Score: 0</div> <!-- Displays the player's current score -->
+      <div id="timer">Time: 0</div> <!-- Displays the elapsed time in the game -->
+  
+      <!-- Player Character -->
+      <img id="player" src="Astronaut.gif" alt="Player"> <!-- Represents the player's character -->
+  
+      <!-- Level Menu -->
+      <div id="level-menu">
+        <h1>Select a Level</h1> <!-- Menu title for selecting levels -->
+        <button class="level-select-button" data-level="1">Level 1: The Dawn</button> <!-- Button for starting Level 1 -->
+        <button class="level-select-button" data-level="2">Level 2: Forest of Lights</button> <!-- Button for starting Level 2 -->
+        <button class="level-select-button" data-level="3">Level 3: The Ruined City</button> <!-- Button for starting Level 3 -->
+      </div>
+  
+      <!-- Level 1 Elements -->
+      <div class="platform level1" style="top: 400px; left: 50px; width: 200px;"></div> <!-- Static platform for Level 1 -->
+      <div class="platform level1" style="top: 300px; left: 300px; width: 150px;"></div> <!-- Another static platform -->
+      <div class="platform level1 moving-platform" style="top: 200px; left: 500px; width: 150px;"></div> <!-- Moving platform for Level 1 -->
+      <div class="collectible level1" style="top: 250px; left: 400px;"></div> <!-- Collectible object for Level 1 -->
+      <div class="collectible level1" style="top: 150px; left: 600px;"></div> <!-- Another collectible -->
+      <div class="spike level1" style="top: 450px; left: 300px; width: 50px;"></div> <!-- Hazard (spike) for Level 1 -->
+      <div class="goal level1" style="top: 100px; left: 800px;">Finish</div> <!-- Goal to complete Level 1 -->
+  
+      <!-- Level 2 Elements -->
+      <div class="platform level2" style="top: 400px; left: 50px; width: 250px; display: none;"></div> <!-- Platform for Level 2 (hidden initially) -->
+      <div class="platform level2" style="top: 300px; left: 350px; width: 200px; display: none;"></div> <!-- Another platform for Level 2 -->
+      <div class="gravity-zone level2" style="top: 200px; left: 400px; width: 150px; height: 50px; display: none;"></div> <!-- Special gravity zone for Level 2 -->
+      <div class="collectible level2" style="top: 350px; left: 300px; display: none;"></div> <!-- Collectible for Level 2 -->
+      <div class="goal level2" style="top: 100px; left: 850px; display: none;">Finish</div> <!-- Goal to complete Level 2 -->
+  
+      <!-- Level 3 Elements -->
+      <div class="platform level3" style="top: 450px; left: 50px; width: 200px; display: none;"></div> <!-- Platform for Level 3 (hidden initially) -->
+      <div class="platform level3" style="top: 350px; left: 300px; width: 150px; display: none;"></div> <!-- Another platform for Level 3 -->
+      <div class="platform level3" style="top: 250px; left: 500px; width: 200px; display: none;"></div> <!-- Third platform for Level 3 -->
+      <div class="collectible level3" style="top: 200px; left: 500px; display: none;"></div> <!-- Collectible for Level 3 -->
+      <div class="spike level3" style="top: 450px; left: 300px; width: 50px; display: none;"></div> <!-- Hazard (spike) for Level 3 -->
+      <div class="goal level3" style="top: 100px; left: 800px; display: none;">Finish</div> <!-- Goal to complete Level 3 -->
     </div>
-
-    <!-- Level 1 -->
-    <div class="platform level1" style="top: 400px; left: 50px; width: 200px;"></div>
-    <div class="platform level1" style="top: 300px; left: 300px; width: 150px;"></div>
-    <div class="platform level1 moving-platform" style="top: 200px; left: 500px; width: 150px;"></div>
-    <div class="collectible level1" style="top: 250px; left: 400px;"></div>
-    <div class="collectible level1" style="top: 150px; left: 600px;"></div>
-    <div class="spike level1" style="top: 450px; left: 300px; width: 50px;"></div>
-    <div class="goal level1" style="top: 100px; left: 800px;">Finish</div>
-
-    <!-- Level 2 -->
-    <div class="platform level2" style="top: 400px; left: 50px; width: 250px; display: none;"></div>
-    <div class="platform level2" style="top: 300px; left: 350px; width: 200px; display: none;"></div>
-    <div class="gravity-zone level2" style="top: 200px; left: 400px; width: 150px; height: 50px; display: none;"></div>
-    <div class="collectible level2" style="top: 350px; left: 300px; display: none;"></div>
-    <div class="goal level2" style="top: 100px; left: 850px; display: none;">Finish</div>
-
-    <!-- Level 3 -->
-    <div class="platform level3" style="top: 450px; left: 50px; width: 200px; display: none;"></div>
-    <div class="platform level3" style="top: 350px; left: 300px; width: 150px; display: none;"></div>
-    <div class="platform level3" style="top: 250px; left: 500px; width: 200px; display: none;"></div>
-    <div class="collectible level3" style="top: 200px; left: 500px; display: none;"></div>
-    <div class="spike level3" style="top: 450px; left: 300px; width: 50px; display: none;"></div>
-    <div class="goal level3" style="top: 100px; left: 800px; display: none;">Finish</div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  
